@@ -1,4 +1,51 @@
-.div {
+//optionPicker css
+.orange {
+  background-color: $color-orange-200;
+}
+.purple {
+  background-color: $color-purple-200;
+}
+.blue {
+  background-color: $color-blue-200;
+}
+.green {
+  background-color: $color-green-200;
+}
+.white {
+  background-color: $color-white;
+}
+.optionPicker {
+  position: relative;
+}
+
+.check {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+}
+.checkHover {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  opacity: 0.5;
+}
+.checkClicked {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  opacity: 1;
+}
+.checkWrapper {
   width: 168px;
   height: 168px;
+  border-radius: 16px;
+}
+
+//options css
+
+.options {
+  display: flex;
+  width: 100vw;
+  height: 168px;
+  gap: 16px;
 }

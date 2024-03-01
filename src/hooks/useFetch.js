@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 
-// 1. 우선 fetch 기본 함수 제작 후
-// 2. { get put patch delete post } Hooks를 추가적으로 제작
 // 3. /{team}/messages/{id}/, /{team}/recipients/{id}/, /{team}/recipients/{recipient_id}/reactions/
 // 4. url 가공 필요
 
 // 기본 fetch에서 url, method, body을 받아 실행
 const BASE_URL = 'https://rolling-api.vercel.app';
-const useFetch = (url, method = 'GET', body = null) => {
-  const [data, setData] = useState(null);
+
+export default function useFetch(url, method = 'GET', body = null) {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +29,7 @@ const useFetch = (url, method = 'GET', body = null) => {
         if (!response.ok) {
           throw new Error('서버 응답 실패');
         }
-        const result = response.json();
+        const result = await response.json();
         setData(result);
       } catch (error) {
         console.error(error);
@@ -45,9 +44,7 @@ const useFetch = (url, method = 'GET', body = null) => {
   // url, method, body가 변경될 때마다 호출
 
   return data;
-};
-
-export default useFetch;
+}
 
 // const API = {
 //   // GET: 리소스 조회
