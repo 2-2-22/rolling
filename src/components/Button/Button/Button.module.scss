@@ -1,0 +1,143 @@
+@mixin primary {
+  background-color: $color-purple-600;
+  border: 1px solid $color-gray-600;
+  color: $color-white;
+
+  &:hover:enabled {
+    background-color: $color-purple-700;
+    border: 1px solid $color-gray-700;
+  }
+
+  &:focus:enabled {
+    border: 1px solid $color-purple-900;
+  }
+
+  &:active:enabled {
+    background-color: $color-purple-800;
+    border: 1px solid $color-gray-800;
+  }
+}
+
+@mixin secondary {
+  background-color: $color-white;
+  border: 1px solid $color-purple-600;
+  color: $color-purple-700;
+
+  &:hover:enabled {
+    background-color: $color-purple-100;
+    border: 1px solid $color-purple-700;
+  }
+
+  &:focus:enabled {
+    border: 1px solid $color-purple-900;
+  }
+
+  &:active:enabled {
+    background-color: $color-purple-200;
+    border: 1px solid $color-purple-800;
+  }
+}
+
+@mixin outlined {
+  background-color: $color-white;
+  border: 1px solid $color-gray-300;
+  color: $color-gray-900;
+
+  &:hover:enabled {
+    background-color: $color-gray-100;
+    border: 1px solid $color-gray-100;
+  }
+
+  &:focus:enabled {
+    border: 1px solid $color-gray-500;
+  }
+
+  &:active:enabled {
+    background-color: $color-gray-200;
+    border: 1px solid $color-gray-500;
+  }
+}
+
+.button {
+  @include font-16-Regular;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  gap: 8px;
+  border-radius: 6px;
+
+  &.primary56 {
+    @include primary;
+    @include font-18-Bold;
+    border-radius: 12px;
+    height: 56px;
+  }
+
+  &.primary40 {
+    @include primary;
+    @include font-16-Regular;
+    height: 40px;
+  }
+
+  &.secondary {
+    @include secondary;
+    @include font-16-Regular;
+    height: 40px;
+  }
+
+  &.outlined56 {
+    @include outlined;
+    @include font-18-Bold;
+    border-radius: 12px;
+    height: 56px;
+  }
+
+  &.outlined40 {
+    @include outlined;
+    @include font-16-Regular;
+    height: 40px;
+  }
+
+  &.outlined36 {
+    @include outlined;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    height: 36px;
+  }
+
+  &.outlined28 {
+    @include outlined;
+    @include font-14-Regular;
+    height: 28px;
+  }
+
+  &:disabled {
+    background-color: $color-gray-300;
+    border: 1px solid $color-gray-300;
+    color: $color-white;
+    cursor: not-allowed;
+  }
+
+  &.sm {
+    width: 92px;
+  }
+
+  &.md {
+    width: 280px;
+  }
+
+  &.lg {
+    width: 320px;
+  }
+
+  &.xl {
+    width: 720px;
+  }
+}

@@ -1,1 +1,133 @@
-// init
+@font-face {
+  font-family: 'Pretendard'; //variable font 설정 
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('./woff2/PretendardVariable.woff2') format('woff2-variations');
+}
+
+@mixin font-28-Bold {
+  font-family: 'Pretendard';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px; /* 150% */
+  letter-spacing: -0.28px;
+}
+
+@mixin font-24-Bold {
+  font-family: 'Pretendard';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 150% */
+  letter-spacing: -0.24px;
+}
+
+@mixin font-24-Regular {
+  font-family: 'Pretendard';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
+  letter-spacing: -0.24px;
+}
+
+@mixin font-20-Bold {
+  font-family: 'Pretendard';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.2px;
+}
+
+@mixin font-20-Regular {
+  font-family: 'Pretendard';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  letter-spacing: -0.2px;
+}
+
+@mixin font-18-Bold {
+  font-family: 'Pretendard';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 155.556% */
+  letter-spacing: -0.18px;
+}
+
+@mixin font-18-Regular {
+  font-family: 'Pretendard';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  letter-spacing: -0.18px;
+}
+
+@mixin font-16-Bold {
+  font-family: 'Pretendard';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: -0.16px;
+}
+
+@mixin font-16-Regular {
+  font-family: 'Pretendard';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+  letter-spacing: -0.16px;
+}
+
+@mixin font-15-Regular {
+  font-family: 'Pretendard';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 146.667% */
+  letter-spacing: -0.15px;
+}
+
+@mixin font-15-Bold {
+  font-family: 'Pretendard';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; /* 146.667% */
+  letter-spacing: -0.15px;
+}
+
+@mixin font-14-Regular {
+  font-family: 'Pretendard';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.07px;
+}
+
+@mixin font-14-Bold {
+  font-family: 'Pretendard';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.07px;
+}
+
+@mixin font-12-Regular {
+  font-family: 'Pretendard';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: -0.06px;
+}
