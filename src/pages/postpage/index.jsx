@@ -1,7 +1,9 @@
+import { Option } from '../../components/Option/index';
 function PostPage() {
   return (
     <>
-      <h1>Post Page!</h1>
+      <Option type="color" />
+      <Option type="image"/>
     </>
   );
 }
