@@ -1,0 +1,95 @@
+[33mcommit 7cf40d2f5250f281ab0668cabd2ab6019d3fea8e[m[33m ([m[1;36mHEAD -> [m[1;32m32-feat-option-컴포넌트-제작[m[33m, [m[1;33mtag: v0.1[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/32-feat-option-컴포넌트-제작[m[33m, [m[1;31morigin/2-feat-mockdata-생성[m[33m)[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Mon Feb 26 09:05:18 2024 +0900
+
+    docs: refactor 이슈 템플릿 추가
+
+[33mcommit a374f18c64159e86cfbab78c18004144ccfb5a88[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Mon Feb 26 09:03:04 2024 +0900
+
+    docs: bug 이슈 템플릿 추가
+
+[33mcommit 4c099fb106b69e829f91ac9c9d806169dce0444c[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Mon Feb 26 09:01:19 2024 +0900
+
+    docs: feat 이슈 템플릿 추가
+
+[33mcommit 8e2fc29263f73ad52b9654035a6ce7026dfa1da0[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Mon Feb 26 08:56:31 2024 +0900
+
+    docs: PR 템플릿 추가
+
+[33mcommit 169daf93635108cc44452a99bf66838fab869502[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 22:59:18 2024 +0900
+
+    feat: 프로젝트 초기 폴더구조 추가
+
+[33mcommit 9a6145357efcb57eeb4cb9b81ae930e310b2a231[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 22:52:58 2024 +0900
+
+    remove: Vite React Project 기본 파일 삭제
+
+[33mcommit 78c8bf7d254a90c2edded708b68e43811da023e9[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 22:51:06 2024 +0900
+
+    chore: 서버 port 3000 설정 기본값(5173)
+
+[33mcommit 425436fba5b76e0cc18075f6170c5780692721d3[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 22:50:10 2024 +0900
+
+    chore: sass 패키지 추가
+
+[33mcommit 371c4ce0bf5e55daab6a1f69841622985213b448[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 22:48:02 2024 +0900
+
+    chore: husky + lint-staged 설정 추가
+
+[33mcommit 54a63de2d7a4298dea3e2f0f3e0e2acc9e5573b2[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 20:01:36 2024 +0900
+
+    chore: lint-staged 패키지 추가
+
+[33mcommit d1c792277e13b6e54cf90555024f2dc971d00643[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 20:00:45 2024 +0900
+
+    chore: husky 패키지 추가
+
+[33mcommit 1c1c915700db49f80d931b709bbcee492057de08[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 19:59:09 2024 +0900
+
+    chore: stylelint 설정 추가
+
+[33mcommit 0ba402ae61854382f7cb25fcfab4d369096167f7[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 19:58:41 2024 +0900
+
+    chore: stylelint 패키지 추가
+
+[33mcommit 988ceab9b9240ec87f92ab671db72b971e601504[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 19:57:15 2024 +0900
+
+    chore: prettier 설정 추가
+
+[33mcommit 54ffbc7ce940f3cd68bafa9aafdc72c5dad27238[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 19:55:50 2024 +0900
+
+    chore: prettier 패키지 추가
+
+[33mcommit e0bd8ea7c8f494d34a36180634f83a586e13ad14[m
+Author: devwqc <devwqc@gmail.com>
+Date:   Sun Feb 25 19:54:25 2024 +0900
+
+    init: Vite React Project
