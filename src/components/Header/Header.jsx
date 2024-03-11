@@ -24,12 +24,13 @@ export default function Header() {
           </Link>
         </div>
         <Link to="/post">
-          <Button type="button" styleType="outlined40" className={styles.btn}>
+          <Button styleType="outlined40" className={styles.btn}>
             롤링 페이퍼 만들기
           </Button>
         </Link>
       </nav>
       <hr className={styles.line} />
+      {/* 하단 Nav바 */}
       {showSubHeader && <SubHeader />}
     </header>
   );

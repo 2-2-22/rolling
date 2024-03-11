@@ -1,12 +1,12 @@
-import { Toast } from '../../../components/Toast';
-import handleShareKakao from '../../../utils/handleShareKakao';
+import { Toast } from '../../Toast/index.js';
+import handleShareKakao from '../../../utils/handleShareKakao.js';
 import Button from '../../Button/Button/Button.jsx';
 import Share24 from '../../../assets/svg/Share24.jsx';
 import { useRef, useState } from 'react';
 import styles from './SubHeader.module.scss';
 import useClickOutside from '../../../hooks/useClickOutside.js';
 
-export default function ShareToggleBtn() {
+export default function ShareBtn() {
   // Toast, 토글 Box 상태 관리
   const [toast, setToast] = useState(false);
   const [showShare, setShowShare] = useState(false);

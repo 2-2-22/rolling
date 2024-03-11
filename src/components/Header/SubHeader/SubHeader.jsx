@@ -1,22 +1,28 @@
 import ArrowDown from '../../../assets/svg/ArrowDown.jsx';
 import ArrowUp from '../../../assets/svg/ArrowUp.jsx';
 import styles from './SubHeader.module.scss';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import { Reactions } from '../../Reactions';
 import { LoadingPage } from '../../../pages/LoadingPage';
-import EmoziToggleBox from './EmoziToggleBox.jsx';
-import AddEmoziBtn from './AddEmoziBtn.jsx';
+import ShowEmojiBox from './ShowEmojiBox.jsx';
+import AddEmojiBtn from './AddEmojiBtn.jsx';
 import { TEAM } from '../../../constants';
-import ShareToggleBtn from './ShareToggleBtn.jsx';
+import ShareBtn from './ShareBtn.jsx';
+import AddEmojiBox from './AddEmojiBox.jsx';
 
 export default function SubHeader() {
-  // Emozi 토글 상태 관리
-  const [showEmozi, setShowEmozi] = useState(false);
+  // 이모지 상태 관리
+  const [emojiIsSelected, setEmojiIsSelected] = useState(false);
 
-  // 토글 박스 DOM 참조용 Ref
-  const showEmoziRef = useRef();
+  console.log(emojiIsSelected);
+
+  // 토글 박스 상태 관리
+  const [emojiBoxIsOpen, setEmojiBoxIsOpen] = useState(false);
+  const [emojiPickerIsOpen, setEmojiPickerIsOpen] = useState(false);
+
+  // const [recipient, setRecipient] = useState(null);
 
   // Recipient 데이터
   const { recipientId } = useParams();
@@ -24,23 +30,40 @@ export default function SubHeader() {
     `/${TEAM}/recipients/${recipientId}/`,
   );
 
-  // 데이터 로드 이후에 렌더링
+  // useEffect(() => {
+  //   const getRecipient = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `https://rolling-api.vercel.app/${TEAM}/recipients/${recipientId}/`,
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error('Recipient Data를 받아오는데 실패했습니다.');
+  //       }
+  //       const json = await response.json();
+  //       setRecipient(json);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   getRecipient();
+  // }, [emojiIsSelected]);
 
+  // 데이터 로드 이후에 렌더링
   if (isLoading || !recipientData) {
+    // setRecipient(recipientData);
     return <LoadingPage />;
   }
 
   const { name, messageCount, topReactions, recentMessages } = recipientData;
+  // const { name, messageCount, topReactions, recentMessages } = recipient;
 
-  // Emozi 토글 핸들러 함수
-  const openEmoziToggle = () => {
-    showEmoziRef.current.style.display = 'block';
-    setShowEmozi(true);
+  // Emoji 토글 핸들러 함수
+  const openEmojiToggle = () => {
+    setEmojiBoxIsOpen(true);
   };
 
-  const closeEmoziToggle = () => {
-    showEmoziRef.current.style.display = 'none';
-    setShowEmozi(false);
+  const closeEmojiToggle = () => {
+    setEmojiBoxIsOpen(false);
   };
 
   return (
@@ -78,12 +101,12 @@ export default function SubHeader() {
           <Reactions reactions={topReactions} />
           {/* 이모지 더 보기 버튼 */}
           {topReactions.length ? (
-            showEmozi ? (
-              <div onClick={closeEmoziToggle}>
+            emojiBoxIsOpen ? (
+              <div>
                 <ArrowUp />
               </div>
             ) : (
-              <div className={styles.toggleBtn} onClick={openEmoziToggle}>
+              <div className={styles.toggleBtn} onClick={openEmojiToggle}>
                 <ArrowDown />
               </div>
             )
@@ -91,18 +114,26 @@ export default function SubHeader() {
             <div></div>
           )}
           {/* 이모지 토글 박스 */}
-          <div className={styles.emoziToggleBox} ref={showEmoziRef}>
-            <EmoziToggleBox
-              team={TEAM}
-              recipientId={recipientId}
-              close={closeEmoziToggle}
-            />
-          </div>
+          <ShowEmojiBox
+            team={TEAM}
+            recipientId={recipientId}
+            close={closeEmojiToggle}
+            isOpen={emojiBoxIsOpen}
+          />
           {/* 이모지 추가 버튼 */}
-          <AddEmoziBtn />
+          <AddEmojiBtn
+            isOpen={emojiPickerIsOpen}
+            setIsOpen={setEmojiPickerIsOpen}
+          />
+          {/* 이모지 추가 토글 박스 */}
+          <AddEmojiBox
+            isOpen={emojiPickerIsOpen}
+            setIsOpen={setEmojiPickerIsOpen}
+            setIsSelected={setEmojiIsSelected}
+          />
           <div className={styles.line}></div>
           {/* 공유 토글 박스 */}
-          <ShareToggleBtn />
+          <ShareBtn />
         </section>
       </nav>
     </header>
