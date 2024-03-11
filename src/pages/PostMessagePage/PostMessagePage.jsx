@@ -6,7 +6,7 @@ import { ReactDraft } from '../../components/ReactDraft';
 import { Dropdown } from '../../components/Dropdown';
 import ProfileImage from '../../components/ProfileImage/ProfileImage';
 import useMutate from '../../hooks/useMutate';
-import ErrorPage404 from '../ErrorPage404';
+import { ErrorPage404 } from '../ErrorPage404';
 import useManageInput from '../../hooks/useManageInput/useManageInput';
 
 import {
