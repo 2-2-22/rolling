@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BUTTON_SIZE, LABEL, DESCRIPTION, TEAM } from '../../constants';
 import useMutate from '../../hooks/useMutate';
-import { ErrorPage404 } from '../ErrorPage404';
+import { ErrorPage } from '../ErrorPage';
 import useManageInput from '../../hooks/useManageInput/useManageInput';
 
 export default function PostCardPage() {
@@ -38,7 +38,7 @@ export default function PostCardPage() {
         navigate(`/post/${data.id}`);
       },
       onError: () => {
-        return <ErrorPage404 />;
+        return <ErrorPage />;
       },
     });
   };

@@ -6,7 +6,7 @@ import { ReactDraft } from '../../components/ReactDraft';
 import { Dropdown } from '../../components/Dropdown';
 import ProfileImage from '../../components/ProfileImage/ProfileImage';
 import useMutate from '../../hooks/useMutate';
-import { ErrorPage404 } from '../ErrorPage404';
+import { ErrorPage } from '../ErrorPage';
 import useManageInput from '../../hooks/useManageInput/useManageInput';
 
 import {
@@ -47,7 +47,7 @@ export default function PostMessagePage() {
         navigate(`/post/${recipientId}`);
       },
       onError: () => {
-        return <ErrorPage404 />;
+        return <ErrorPage />;
       },
     });
   };
