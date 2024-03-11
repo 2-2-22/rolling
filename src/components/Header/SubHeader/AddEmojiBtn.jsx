@@ -14,7 +14,7 @@ export default function AddEmojiBtn({ isOpen, setIsOpen }) {
       onClick={openAddEmojiBtn}
     >
       <Add24 />
-      추가
+      <span className={styles.text}>추가</span>
     </Button>
   ) : (
     <Button
@@ -22,7 +22,7 @@ export default function AddEmojiBtn({ isOpen, setIsOpen }) {
       className={`${styles.addEmojiBtn} ${styles.btn}`}
     >
       <Add24 />
-      닫기
+      <span className={styles.text}>닫기</span>
     </Button>
   );
 }

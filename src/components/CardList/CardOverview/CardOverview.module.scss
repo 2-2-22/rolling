@@ -7,23 +7,23 @@
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px;
+  padding: 28px 24px 20px;
   flex-shrink: 0;
   color: $color-gray-900;
+  @include font-16-Regular;
 
-  & .profile {
+  & .profileBox {
     display: flex;
     flex-direction: column;
     gap: 12px;
 
     & .name {
       @include font-24-Bold;
-      overflow: hidden;
-      white-space: normal;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     & .profileImageContainer {
@@ -34,8 +34,8 @@
       .visitorImage-2,
       .visitorImage-3,
       .visitorCount {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
         border-radius: 50px;
         border: 1.5px solid $color-white;
         background: $color-white;
@@ -73,17 +73,27 @@
     }
 
     & .visitorEmptyCase {
-      height: 32px;
+      height: 28px;
       display: flex;
       align-items: center;
     }
 
     & .text {
-      @include font-16-Regular;
-
       & .count {
         @include font-16-Bold;
       }
+    }
+  }
+
+  & .reactionsBox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 52px;
+
+    & .classifyLine {
+      background: rgba(0, 0, 0, 0.12);
+      opacity: 0.1;
     }
   }
 
@@ -91,6 +101,31 @@
     transform: scale(1.05);
     transition: transform 0.3s ease;
     opacity: 0.8;
+  }
+
+  @include mobile {
+    padding: 24px 20px;
+    width: 208px;
+    height: 232px;
+    @include font-14-Regular;
+
+    & .profileBox {
+      & .name {
+        @include font-18-Bold;
+        -webkit-line-clamp: 1;
+      }
+
+      & .text {
+        & .count {
+          @include font-14-Bold;
+        }
+      }
+    }
+
+    & .reactionsBox {
+      justify-content: space-between;
+      height: 48px;
+    }
   }
 }
 

@@ -11,5 +11,16 @@
   position: absolute;
   top: 50px;
   left: 270px;
-  z-index: 1000;
+  @include top;
+}
+
+@include mobile {
+  .addEmojiBtn {
+    width: 50px;
+    padding: 0;
+  }
+
+  .text {
+    display: none;
+  }
 }

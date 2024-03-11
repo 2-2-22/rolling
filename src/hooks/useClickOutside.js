@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
+import isFunction from '../utils/isFunction';
 
 function useClickOutside(ref, callback) {
   useEffect(() => {
     const handleClick = (event) => {
-      if (typeof callback !== 'function') return;
+      if (!isFunction(callback)) return;
       if (!ref?.current) return;
       if (ref.current && !ref.current.contains(event.target)) {
         callback();

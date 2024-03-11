@@ -7,8 +7,11 @@
   gap: 48px;
   padding: 0 32px 48px;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-  .ButtonBg {
+  .buttonBg {
     width: 100%;
     background: linear-gradient(
       to bottom,
@@ -24,5 +27,42 @@
     display: flex;
     justify-content: center;
     z-index: 10;
+
+    .myButton {
+      // 봉찬님 border요소 default로 선언하는게 나을거같아요
+      border: none;
+      @include font-18-Bold;
+    }
+  }
+
+  @include tablet {
+    padding: 0 24px 48px 8px;
+
+    .buttonBg {
+      padding: 0;
+
+      .myButton {
+        width: 100%;
+        margin: 24px;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 0 24px 82px 12px;
+    margin-top: 40px;
+    gap: 72px;
+
+    .buttonBg {
+      padding: 0;
+
+      .myButton {
+        width: 100%;
+        margin: 24px 20px;
+        font-weight: 400;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+    }
   }
 }

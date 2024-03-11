@@ -48,12 +48,4 @@
   height: 168px;
   gap: 16px;
   margin-bottom: 68px;
-
-  @include mobile {
-    display: grid;
-    grid-template-rows: 170px 170px;
-    grid-template-columns: 170px 170px;
-    gap: 16px;
-    justify-items: center;
-  }
 }

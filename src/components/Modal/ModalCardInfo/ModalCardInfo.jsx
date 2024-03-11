@@ -5,6 +5,7 @@ import { Button } from '../../Button';
 import { Avatar } from '../../Avatar';
 import { BadgeRelation } from '../../Badge';
 import { formatDate } from '../../../utils/dateFormatter';
+import { FONT_TYPE } from '../../../constants';
 
 const ModalCardInfo = forwardRef((_, ref) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,8 +25,16 @@ const ModalCardInfo = forwardRef((_, ref) => {
     relationship,
     createdAt,
     content,
+    font,
   }) => {
-    setModalInfo({ profileImageURL, sender, relationship, createdAt, content });
+    setModalInfo({
+      profileImageURL,
+      sender,
+      relationship,
+      createdAt,
+      content,
+      font,
+    });
   };
 
   useImperativeHandle(
@@ -67,7 +76,7 @@ const ModalCardInfo = forwardRef((_, ref) => {
           <div className={styles.time}>{formatDate(modalInfo?.createdAt)}</div>
         </header>
         <div
-          className={styles.body}
+          className={`${styles.body} ${styles[FONT_TYPE[modalInfo?.font]]}`}
           dangerouslySetInnerHTML={{ __html: modalInfo?.content }}
         ></div>
         <footer className={styles.footer}>

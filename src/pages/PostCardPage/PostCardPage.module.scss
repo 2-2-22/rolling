@@ -31,7 +31,7 @@
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 56px;
-  width: min(720px, 100vw - 48px);
+  width: 720px;
   gap: 4px;
 }
 
@@ -92,15 +92,4 @@
   color: $color-gray-900;
   @include font-24-Bold;
   margin-bottom: 12px;
-}
-
-.button {
-  width: min(720px, 100vw - 48px);
-  padding: 0;
-}
-
-.option {
-  @include mobile {
-    height: 402px;
-  }
 }

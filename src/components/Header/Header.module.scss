@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  @include top;
 
   .topNav {
     display: flex;
@@ -12,18 +12,28 @@
     align-items: center;
     width: 1200px;
     margin: 0 auto;
-    padding: 11px 5px;
+    padding: 12px 4px;
   }
 
   .line {
     opacity: 0.3;
+  }
+
+  @include mobile {
+    .topNav {
+      display: none;
+    }
+
+    .line {
+      display: none;
+    }
   }
 }
 
 @media (max-width: 1248px) {
   .header {
     width: 100%;
-    padding: 11px 24px;
+    padding: 12px 24px;
 
     .topNav {
       width: 100%;

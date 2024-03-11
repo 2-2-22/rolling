@@ -13,32 +13,29 @@ function LandingPage() {
         <div className={styles.textBox}>
           <div className={styles.pointBtn}>Point. 01</div>
           <p className={styles.boldText}>
-            누구나 손쉽게, 온라인{' '}
-            <br className={styles.visibleDesktopSpacing} />
+            누구나 손쉽게, 온라인 <br />
             롤링 페이퍼를 만들 수 있어요
           </p>
-          <p className={styles.thinText}>로그인 없이 자유롭게 만들어요.</p>
+          <p>로그인 없이 자유롭게 만들어요.</p>
         </div>
         {/* 상단 - Right */}
         <div className={styles.imgBox}>
-          <img className={styles.img} src={point1Img} alt="rolling card" />
+          <img src={point1Img} alt="rolling card" />
         </div>
       </div>
       {/* 하단 Box */}
       <div className={styles.pointBox}>
         {/* 하단 - Left */}
+        <div className={styles.imgBox}>
+          <img src={point2Img} alt="emozi" />
+        </div>
+        {/* 하단 - Right */}
         <div className={styles.textBox}>
           <div className={styles.pointBtn}>Point. 02</div>
           <p className={styles.boldText}>
             서로에게 이모지로 감정을 표현해보세요
           </p>
-          <p className={styles.thinText}>
-            롤링 페이퍼에 이모지를 추가할 수 있어요.
-          </p>
-        </div>
-        {/* 하단 - Right */}
-        <div className={styles.imgBox}>
-          <img className={styles.img} src={point2Img} alt="emozi" />
+          <p>롤링 페이퍼에 이모지를 추가할 수 있어요.</p>
         </div>
       </div>
       <Link to="/list">

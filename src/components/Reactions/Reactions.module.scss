@@ -2,21 +2,37 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  @include font-16-Regular;
 
   & .content {
     padding: 8px 12px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 4px;
     border-radius: 32px;
     background: rgba(0, 0, 0, 0.54);
-    @include font-16-Regular;
     color: $color-white;
+    width: auto;
+    height: 36px;
 
     & .emoji {
-      width: 16px;
-      height: 20px;
+      @include font-14-Regular;
+    }
+  }
+
+  @include mobile {
+    @include font-14-Regular;
+    gap: 4px;
+
+    & .content {
+      padding: 6px 10px;
+      gap: 8px;
+      height: 32px;
+
+      & .emoji {
+        @include font-12-Regular;
+      }
     }
   }
 }

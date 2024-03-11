@@ -10,7 +10,7 @@
   border: 1px solid #b6b6b6;
   background: $color-white;
   padding: 24px;
-  z-index: 1000;
+  @include top;
 }
 
 .emojiBtn {

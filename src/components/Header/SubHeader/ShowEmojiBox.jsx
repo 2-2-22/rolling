@@ -1,6 +1,6 @@
 import useClickOutside from '../../../hooks/useClickOutside';
 import useFetch from '../../../hooks/useFetch';
-import { LoadingPage } from '../../../pages/LoadingPage';
+import LoadingEmojiBox from '../../LoadingComponent/LoadingEmojiBox';
 import styles from './ShowEmojiBox.module.scss';
 import { useRef } from 'react';
 
@@ -16,7 +16,7 @@ export default function ShowEmojiBox({ team, recipientId, close, isOpen }) {
 
   // 데이터 로드 이후에 렌더링
   if (isLoading || !reactionData) {
-    return <LoadingPage />;
+    return <LoadingEmojiBox />;
   }
 
   const { results: reactionList } = reactionData;

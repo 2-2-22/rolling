@@ -9,17 +9,13 @@ function Option({ type }) {
   const colorChart = ['beige', 'purple', 'blue', 'green'];
   const { data, isLoading } = useFetch(`/background-images/`);
   const [selectedOption, setSelectedOption] = useState('beige');
-  const [selectedOptionImg, setSelectedOptionImg] = useState(
-    'https://picsum.photos/id/683/3840/2160',
-  );
 
   if (isLoading || !data) return <LoadingPage />;
 
   let Imgdata = data.imageUrls;
 
   const handleOptionClicked = (option) => {
-    if (type === 'color') setSelectedOption(option);
-    else setSelectedOptionImg(option);
+    setSelectedOption(option);
   };
 
   return (
@@ -38,7 +34,7 @@ function Option({ type }) {
           <OptionPicker
             backgroundImg={img}
             key={img}
-            isSelected={selectedOptionImg === img}
+            isSelected={selectedOption === img}
             onOptionClick={() => handleOptionClicked(img)}
           />
         ))}
@@ -51,7 +47,7 @@ function Option({ type }) {
       <input
         type="hidden"
         name="backgroundImageURL"
-        value={type === 'image' ? selectedOptionImg : ''}
+        value={type === 'image' ? selectedOption : ''}
       />
     </div>
   );

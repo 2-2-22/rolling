@@ -22,7 +22,7 @@ function CardPost({ item, onDelete, onClick }) {
           <div className={styles.cardInfo}>
             <div className={styles.cardName}>
               <p>
-                From.<span>{sender}</span>
+                From.<span className={styles.senderName}>{sender}</span>
               </p>
             </div>
             <div className={styles.box}>

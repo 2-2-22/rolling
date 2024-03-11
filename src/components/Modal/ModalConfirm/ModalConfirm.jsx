@@ -2,6 +2,7 @@ import { forwardRef, useImperativeHandle, useState } from 'react';
 import styles from './ModalConfirm.module.scss';
 import Modal from '../Modal';
 import { Button } from '../../Button';
+import isFunction from '../../../utils/isFunction';
 
 const ModalConfirm = forwardRef((_, ref) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ const ModalConfirm = forwardRef((_, ref) => {
   );
 
   const handleClick = async () => {
-    if (typeof modalInfo?.onClick === 'function') {
+    if (isFunction(modalInfo?.onClick)) {
       await modalInfo?.onClick();
     }
     close();

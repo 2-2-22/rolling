@@ -1,5 +1,6 @@
 .container {
-  width: 1232px;
+  width: 100%;
+  max-width: 1212px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -12,25 +13,30 @@
 
   & .content {
     display: flex;
-    column-gap: 24px;
+    column-gap: 20px;
     row-gap: 56px;
     position: relative;
     align-items: center;
     flex-wrap: wrap;
+  }
 
-    & .leftBtn,
-    & .rightBtn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: transform 0.3s ease;
+  .infinityScrollDiv {
+    height: 10px;
+  }
+
+  @include mobile {
+    padding: 0;
+    padding-left: 12px;
+    gap: 8px;
+
+    & .title {
+      @include font-20-Regular;
+      font-weight: 600;
     }
 
-    & .leftBtn {
-      left: -20px;
-    }
-    & .rightBtn {
-      right: -20px;
+    & .content {
+      column-gap: 12px;
+      row-gap: 72px;
     }
   }
 }

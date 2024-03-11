@@ -53,7 +53,7 @@ export default function PostMessagePage() {
   };
 
   return (
-    <div className={styles.div}>
+    <>
       <form className={styles.container} onSubmit={handleSubmit}>
         <div className={styles.box}>
           <div ref={inputRef}>
@@ -101,12 +101,12 @@ export default function PostMessagePage() {
         <div className={styles.box}>
           <input type="hidden" name="team" value="4-22" />
           <div className={styles.button}>
-            <Button size="full" type="submit">
+            <Button size="xl" type="submit">
               생성하기
             </Button>
           </div>
         </div>
       </form>
-    </div>
+    </>
   );
 }

@@ -6,6 +6,18 @@
   src: url('./woff2/PretendardVariable.woff2') format('woff2-variations');
 }
 
+// Noto Sans
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Noto Sans korean
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+// Nanum Myeongjo
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+// Nanum Pen Script
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
 @mixin font-28-Bold {
   font-family: 'Pretendard';
   font-size: 28px;

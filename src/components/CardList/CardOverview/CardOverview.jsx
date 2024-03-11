@@ -19,7 +19,7 @@ export default function CardOverview({ recipient }) {
     color: backgroundImageURL && '#FFF',
   };
 
-  const visitorCount = visitors.length - 3 > 0 ? visitors.length - 3 : null;
+  const visitorCount = messageCount - 3 > 0 ? messageCount - 3 : null;
 
   return (
     <Link
@@ -27,7 +27,7 @@ export default function CardOverview({ recipient }) {
       className={`${styles.content} ${styles[backgroundColor || 'null']}`}
       style={bgStyle}
     >
-      <div className={styles.profile}>
+      <div className={styles.profileBox}>
         <h1 className={styles.name}>To. {name}</h1>
         <div className={styles.profileImageContainer}>
           {visitors.length > 0 ? (
@@ -51,7 +51,10 @@ export default function CardOverview({ recipient }) {
           <span className={styles.count}>{messageCount}명</span>이 작성했어요!
         </p>
       </div>
-      <Reactions reactions={topReactions} />
+      <div className={styles.reactionsBox}>
+        <hr className={styles.classifyLine} />
+        {topReactions && <Reactions reactions={topReactions} />}
+      </div>
     </Link>
   );
 }

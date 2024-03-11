@@ -1,26 +1,17 @@
-.div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding-bottom: 336px;
   gap: 50px;
 
   & .box {
-    width: min(720px, 100vw - 48px);
-
+    width: 720px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     position: relative;
-    flex-wrap: wrap;
 
     & .label {
       @include font-24-Bold;
@@ -49,7 +40,6 @@
 .input {
   @include inputDefault();
   border: 1px solid $color-gray-300;
-
   &:hover {
     border: 1px solid $color-gray-500;
   }
@@ -75,6 +65,5 @@
 }
 
 .button {
-  width: min(720px, 100vw - 48px);
-  padding: 0;
+  margin-top: 24px;
 }

@@ -1,4 +1,3 @@
-
 import styles from './ListPage.module.scss';
 import useFetch from '../../hooks/useFetch';
 import { Button } from '../../components/Button';
@@ -7,18 +6,19 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { EmblaCarousel, TotalCardList } from '../../components/CardList';
 import { TEAM } from '../../constants';
-// import Carousel from '../../components/CardList/Carousel'; - 연습용
 
 // 안된것들
-// 반응형 미구현
-// 무한스크롤
 // overview pattern rect 설정
-// 에러페이지도 추가
+// background 3D
+// 반응형
+// 파비콘 메타데이터
+// wiki, readme 작성
+// 과제
 
 export default function ListPage() {
   const LIMIT = 8;
   const query = `?limit=${LIMIT}&offset=0`;
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(8);
   const navigatePostPage = useNavigate();
   const { data: dataSortedCreateAt, isLoading } = useFetch(
     `/${TEAM}/recipients/${query}`,
@@ -27,8 +27,19 @@ export default function ListPage() {
     `/${TEAM}/recipients/${query}&sort=like`,
   );
   const { data: totalData, isTotalDataLoading } = useFetch(
-    `/${TEAM}/recipients/?limit=${LIMIT}&offset=${offset}`,
+    `/${TEAM}/recipients/?limit=${offset}&offset=0`,
   );
+
+  const handleBottomBtnClick = () => {
+    navigatePostPage(`/post`);
+  };
+
+  const handleScroll = (entries) => {
+    const target = entries[0];
+    if (target.isIntersecting && !isTotalDataLoading) {
+      setOffset((prevOffset) => prevOffset + LIMIT);
+    }
+  };
 
   if (
     isLoading ||
@@ -38,25 +49,15 @@ export default function ListPage() {
     !dataSortedLike ||
     !totalData
   ) {
-
     return <LoadingPage />;
   }
 
   const hotItems = dataSortedLike ? dataSortedLike.results : null;
-
   const newItems = dataSortedCreateAt ? dataSortedCreateAt.results : null;
-
   const EmblaCarouselOptions = {
+    align: 'start',
+    dragFree: true,
     loop: true,
-  };
-
-
-  const handleBottomBtnClick = () => {
-    navigatePostPage(`/post`);
-  };
-
-  const handleScroll = () => {
-    setOffset((prevOffset) => prevOffset + `${LIMIT}`);
   };
 
   return (
@@ -75,12 +76,13 @@ export default function ListPage() {
       <TotalCardList
         data={totalData}
         CardListName={'전체 롤링 페이퍼 💜'}
-        onScroll={handleScroll}
+        handleScroll={handleScroll}
       />
-      <div className={styles.ButtonBg}>
+      <div className={styles.buttonBg}>
         <Button
           className={styles.myButton}
           size={'md'}
+          type={'button'}
           onClick={() => handleBottomBtnClick()}
         >
           나도 만들어보기

@@ -13,8 +13,6 @@ export default function AddEmojiBox({ isOpen, setIsOpen, setIsSelected }) {
   const { mutate } = useMutate(URL);
 
   const handleEmojiSelect = (emoji) => {
-    console.log(emoji.emoji);
-
     const formData = {
       emoji: emoji.emoji,
       type: 'increase',
@@ -23,7 +21,7 @@ export default function AddEmojiBox({ isOpen, setIsOpen, setIsSelected }) {
     mutate(formData, {
       onSuccess: () => {
         console.log('Success!');
-        setIsSelected(true);
+        setIsSelected((preIsSelected) => !preIsSelected);
         setIsOpen(false);
       },
       onError: () => {

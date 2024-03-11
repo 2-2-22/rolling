@@ -1,199 +1,60 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1140px;
+  margin: 0 auto;
+  margin-top: 120px;
+  gap: 30px;
 
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
+  .pointBox {
+    display: flex;
+    width: 1140px;
+    justify-content: space-around;
+    background: $color-surface;
+    border-radius: 16px;
 
-//   margin-top: 60px;
-//   margin-bottom: 150px;
-//   gap: 30px;
+    &:nth-child(1) {
+      display: flex;
+      padding: 60px 0px 60px 60px;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
 
-//   @include tablet {
-//     margin-top: 48px;
-//   }
+    &:nth-child(2) {
+      padding: 60px 192px 60px 0px;
+    }
 
-//   @include mobile {
-//     margin-top: 32px;
-//   }
-//   ////////////////////
+    .textBox {
+      width: 320px;
 
-//   .pointBox {
-//     width: min(1200px, 100vw - 48px);
-//     display: flex;
+      .pointBtn {
+        display: flex;
+        width: 90px;
+        height: 32px;
+        padding: 6px 12px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        background: $color-purple-600;
+        color: $color-white;
+        @include font-14-Bold;
+      }
 
-//     @include tablet {
-//       flex-direction: column;
-//       justify-content: center;
-//       align-items: center;
-//     }
-//     @include mobile {
-//       flex-direction: column;
-//       justify-content: center;
-//       align-items: center;
-//     }
+      .boldText {
+        color: $color-gray-900;
+        @include font-24-Bold;
+      }
+    }
 
-//     background: $color-surface;
-//     border-radius: 16px;
+    .imgBox {
+      width: 720px;
+    }
+  }
 
-//     &:nth-child(1) {
-//       //point box
-//       padding: 60px 0px 60px 60px;
-//       gap: 152px;
-//       @include tablet {
-//         gap: 20px;
-//         padding: 40px;
-//       }
-
-//       @include mobile {
-//         gap: 24px;
-//       }
-//       .boldText {
-//         @include desktop {
-//         }
-//       }
-
-//       .imgBox {
-//         padding: 20px 40px;
-//       }
-//     }
-
-//     &:nth-child(2) {
-//       //point box
-//       padding: 60px 192px 60px 125px;
-//       gap: 124px;
-//       @include tablet {
-//         padding: 40px;
-//         gap: 20px;
-//       }
-//       @include mobile {
-//         gap: 24px;
-//       }
-//       .boldText {
-//         @include desktop {
-//           width: 288px; //줄바꿈을 위해 설정
-//         }
-//       }
-//       .imgBox {
-//         width: 800px;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         justify-content: center;
-//       }
-
-//       .thinText {
-//         width: 340px;
-//       }
-//     }
-//   }
-
-//   .pointBtn {
-//     display: flex;
-//     width: 90px;
-//     height: 32px;
-//     padding: 6px 12px;
-//     justify-content: center;
-//     align-items: center;
-//     border-radius: 50px;
-//     background: $color-purple-600;
-//     color: $color-white;
-//     @include font-14-Bold;
-//     margin-bottom: 16px;
-//   }
-
-//   .boldText {
-//     color: $color-gray-900;
-//     @include font-24-Bold;
-//     display: inline-block;
-//     margin-bottom: 8px;
-//     width: 100%;
-//   }
-
-//   .thinText {
-//     color: $color-gray-500;
-//     @include font-18-Regular;
-//     display: inline-block;
-//     width: 100%;
-//   }
-
-//   .textBox {
-//     @include desktop {
-//       height: 204px;
-//       width: 288px;
-//     }
-//     width: 100%;
-//   }
-// }
-
-// .main {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 20px;
-
-//   margin-top: 60px;
-//   margin-bottom: 150px;
-//   gap: 30px;
-
-//   @include desktop {
-//   }
-
-//   @include tablet {
-//     margin-top: 48px;
-
-//     .visibleDesktopSpacing {
-//       display: none !important;
-//     }
-//   }
-
-//   @include mobile {
-//     margin-top: 32px;
-//     gap: 24px;
-//   }
-// }
-// .pointBox {
-//   width: min(1200px, 100vw - 48px);
-//   display: flex;
-//   gap: 48px;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-
-//   background: $color-surface;
-//   border-radius: 16px;
-
-//   padding-top: 24px;
-//   padding-bottom: 62px;
-// }
-
-// .boldText {
-//   color: $color-gray-900;
-//   @include font-24-Bold;
-//   display: inline-block;
-//   margin-bottom: 8px;
-//   width: 100%;
-// }
-
-// .thinText {
-//   color: $color-gray-500;
-//   @include font-18-Regular;
-//   display: inline-block;
-//   width: 100%;
-// }
-
-// .pointBtn {
-//   display: flex;
-//   width: 90px;
-//   height: 32px;
-//   padding: 6px 12px;
-//   justify-content: center;
-//   align-items: center;
-//   border-radius: 50px;
-//   background: $color-purple-600;
-//   color: $color-white;
-//   @include font-14-Bold;
-//   margin-bottom: 16px;
-// }
-
+  .btn {
+    outline: none;
+    margin-top: 20px;
+  }
+}

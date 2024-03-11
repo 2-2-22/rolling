@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import AutoScroll from 'embla-carousel-auto-scroll';
+import Autoplay from 'embla-carousel-autoplay';
 import { usePrevNextButtons } from './EmblaCarouselArrowButtons';
 import CardOverview from '../CardOverview/CardOverview';
 import styles from './EmblaCarousel.module.scss';
@@ -8,54 +8,26 @@ import { ButtonArrow } from '../../Button';
 
 export default function EmblaCarousel(props) {
   const { slides, options, CarouselName } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    AutoScroll({ playOnInit: false }),
-  ]);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+
+  const onNavButtonClick = useCallback((emblaApi) => {
+    const autoplay = emblaApi?.plugins()?.autoplay;
+    if (!autoplay) return;
+
+    const resetOrStop =
+      autoplay.options.stopOnInteraction === false
+        ? autoplay.reset
+        : autoplay.stop;
+
+    resetOrStop();
+  }, []);
 
   const {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
-
-  const onButtonAutoplayClick = useCallback(
-    (callback) => {
-      const autoScroll = emblaApi?.plugins()?.autoScroll;
-      if (!autoScroll) return;
-
-      const resetOrStop =
-        autoScroll.options.stopOnInteraction === false
-          ? autoScroll.reset
-          : autoScroll.stop;
-
-      resetOrStop();
-      callback();
-    },
-    [emblaApi],
-  );
-
-  const toggleAutoplay = useCallback(() => {
-    const autoScroll = emblaApi?.plugins()?.autoScroll;
-    if (!autoScroll) return;
-
-    const playOrStop = autoScroll.isPlaying()
-      ? autoScroll.stop
-      : autoScroll.play;
-    playOrStop();
-  }, [emblaApi]);
-
-  useEffect(() => {
-    const autoScroll = emblaApi?.plugins()?.autoScroll;
-    if (!autoScroll) return;
-
-    setIsPlaying(autoScroll.isPlaying());
-    emblaApi
-      .on('autoScroll:play', () => setIsPlaying(true))
-      .on('autoScroll:stop', () => setIsPlaying(false))
-      .on('reInit', () => setIsPlaying(false));
-  }, [emblaApi]);
+  } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
   return (
     <section className={styles.embla}>
@@ -74,22 +46,22 @@ export default function EmblaCarousel(props) {
         <ButtonArrow
           className={styles.ArrowLeftBtn}
           direction={'left'}
-          onClick={() => onButtonAutoplayClick(onPrevButtonClick)}
+          onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
         />
         <ButtonArrow
           className={styles.ArrowRightBtn}
           direction={'right'}
-          onClick={() => onButtonAutoplayClick(onNextButtonClick)}
+          onClick={onNextButtonClick}
           disabled={nextBtnDisabled}
         />
-        <button
+        {/* <Button
           className={styles.embla__play}
           onClick={toggleAutoplay}
           type="button"
         >
           {isPlaying ? 'Stop' : 'Start'}
-        </button>
+        </Button> */}
       </div>
     </section>
   );
